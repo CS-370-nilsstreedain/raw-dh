@@ -36,7 +36,7 @@ def solve_game(p):
     rprint("My secret a (never sent to the program) is: %d" % a)
 
     # TODO: your code...
-    result = pow(1, 1, 1)
+    result = pow(g, a, P)
     p.sendline(str(result))
     rprint("g ** a mod P is: %d" % result)
 
@@ -44,7 +44,7 @@ def solve_game(p):
     print(p.readline().strip())
 
     # TODO: your code here...
-    shared_secret = pow(1, 1, 1)
+    shared_secret = pow(exchange_number, a, P)
     p.sendline(str(shared_secret))
     rprint("Sending (g**b)**a mod P: %d" % shared_secret)
 
